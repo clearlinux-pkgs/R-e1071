@@ -4,7 +4,7 @@
 #
 Name     : R-e1071
 Version  : 1.6
-Release  : 19
+Release  : 20
 URL      : http://cran.r-project.org/src/contrib/e1071_1.6-4.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/e1071_1.6-4.tar.gz
 Summary  : No detailed summary available
