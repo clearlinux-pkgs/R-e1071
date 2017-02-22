@@ -4,32 +4,56 @@
 #
 Name     : R-e1071
 Version  : 1.6
-Release  : 23
-URL      : http://cran.r-project.org/src/contrib/e1071_1.6-4.tar.gz
-Source0  : http://cran.r-project.org/src/contrib/e1071_1.6-4.tar.gz
-Summary  : No detailed summary available
+Release  : 24
+URL      : http://cran.r-project.org/src/contrib/e1071_1.6-8.tar.gz
+Source0  : http://cran.r-project.org/src/contrib/e1071_1.6-8.tar.gz
+Summary  : Misc Functions of the Department of Statistics, Probability
 Group    : Development/Tools
 License  : GPL-2.0
+Requires: R-e1071-lib
+Requires: R-SparseM
+Requires: R-slam
+BuildRequires : R-SparseM
+BuildRequires : R-slam
 BuildRequires : clr-R-helpers
 
 %description
 No detailed description available
 
+%package lib
+Summary: lib components for the R-e1071 package.
+Group: Libraries
+
+%description lib
+lib components for the R-e1071 package.
+
+
 %prep
 %setup -q -c -n e1071
 
 %build
+export LANG=C
+export SOURCE_DATE_EPOCH=1487768323
 
 %install
 rm -rf %{buildroot}
+export SOURCE_DATE_EPOCH=1487768323
 export LANG=C
+export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export LDFLAGS="$LDFLAGS  -Wl,-z -Wl,relro"
 mkdir -p %{buildroot}/usr/lib64/R/library
-R CMD INSTALL --install-tests --build  -l %{buildroot}/usr/lib64/R/library e1071
+R CMD INSTALL --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} --build  -l %{buildroot}/usr/lib64/R/library e1071
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
+export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
-export no_proxy=intel.com,localhost
+export no_proxy=localhost
 export _R_CHECK_FORCE_SUGGESTS_=false
 R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library e1071
 
@@ -62,5 +86,8 @@ R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/lib
 /usr/lib64/R/library/e1071/help/paths.rds
 /usr/lib64/R/library/e1071/html/00Index.html
 /usr/lib64/R/library/e1071/html/R.css
-/usr/lib64/R/library/e1071/libs/e1071.so
 /usr/lib64/R/library/e1071/libs/symbols.rds
+
+%files lib
+%defattr(-,root,root,-)
+/usr/lib64/R/library/e1071/libs/e1071.so
