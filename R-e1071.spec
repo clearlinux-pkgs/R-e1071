@@ -4,7 +4,7 @@
 #
 Name     : R-e1071
 Version  : 1.6
-Release  : 26
+Release  : 27
 URL      : http://cran.r-project.org/src/contrib/e1071_1.6-8.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/e1071_1.6-8.tar.gz
 Summary  : Misc Functions of the Department of Statistics, Probability
@@ -12,9 +12,7 @@ Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-e1071-lib
 Requires: R-SparseM
-Requires: R-slam
 BuildRequires : R-SparseM
-BuildRequires : R-slam
 BuildRequires : clr-R-helpers
 
 %description
@@ -33,11 +31,11 @@ lib components for the R-e1071 package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1488813342
+export SOURCE_DATE_EPOCH=1488813483
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1488813342
+export SOURCE_DATE_EPOCH=1488813483
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
