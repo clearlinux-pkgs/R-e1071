@@ -4,7 +4,7 @@
 #
 Name     : R-e1071
 Version  : 1.6.8
-Release  : 30
+Release  : 31
 URL      : http://cran.r-project.org/src/contrib/e1071_1.6-8.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/e1071_1.6-8.tar.gz
 Summary  : Misc Functions of the Department of Statistics, Probability
@@ -30,12 +30,15 @@ lib components for the R-e1071 package.
 %setup -q -c -n e1071
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1489127688
+export SOURCE_DATE_EPOCH=1492796587
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1489127688
+export SOURCE_DATE_EPOCH=1492796587
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -51,7 +54,7 @@ R CMD INSTALL --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} --build  -l
 export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
 R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library e1071
 
@@ -61,6 +64,7 @@ R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/lib
 /usr/lib64/R/library/e1071/DESCRIPTION
 /usr/lib64/R/library/e1071/INDEX
 /usr/lib64/R/library/e1071/Meta/Rd.rds
+/usr/lib64/R/library/e1071/Meta/features.rds
 /usr/lib64/R/library/e1071/Meta/hsearch.rds
 /usr/lib64/R/library/e1071/Meta/links.rds
 /usr/lib64/R/library/e1071/Meta/nsInfo.rds
