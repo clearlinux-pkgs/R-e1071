@@ -1,0 +1,10 @@
+# This file contains recursive sources that require this package
+R-RcmdrMisc
+R-VIM
+R-classInt
+R-clue
+R-coin
+R-klaR
+R-mvoutlier
+R-sfsmisc
+apache-spark
