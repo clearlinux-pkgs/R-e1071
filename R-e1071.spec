@@ -4,14 +4,13 @@
 #
 Name     : R-e1071
 Version  : 1.7.0.1
-Release  : 59
+Release  : 60
 URL      : https://cran.r-project.org/src/contrib/e1071_1.7-0.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/e1071_1.7-0.1.tar.gz
 Summary  : Functions for latent class analysis, short time Fourier transform, fuzzy clustering, support vector machines, shortest path computation, bagged clustering, naive Bayes classifier, ...
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-e1071-lib = %{version}-%{release}
-Requires: R-SparseM
 BuildRequires : R-SparseM
 BuildRequires : buildreq-R
 
@@ -36,10 +35,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1548094981
+export SOURCE_DATE_EPOCH=1552806977
 
 %install
-export SOURCE_DATE_EPOCH=1548094981
+export SOURCE_DATE_EPOCH=1552806977
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -75,8 +74,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library e1071|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  e1071 || :
 
 
 %files
@@ -108,7 +106,7 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/e1071/help/paths.rds
 /usr/lib64/R/library/e1071/html/00Index.html
 /usr/lib64/R/library/e1071/html/R.css
-/usr/lib64/R/library/e1071/libs/symbols.rds
+/usr/lib64/R/library/e1071/tests/clustering.R
 
 %files lib
 %defattr(-,root,root,-)
