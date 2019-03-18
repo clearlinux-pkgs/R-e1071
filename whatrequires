@@ -5,6 +5,9 @@ R-classInt
 R-clue
 R-coin
 R-klaR
-R-mvoutlier
+R-lwgeom
+R-prabclus
+R-robCompositions
 R-sfsmisc
+R-spdep
 apache-spark

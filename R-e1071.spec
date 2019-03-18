@@ -4,7 +4,7 @@
 #
 Name     : R-e1071
 Version  : 1.7.0.1
-Release  : 61
+Release  : 62
 URL      : https://cran.r-project.org/src/contrib/e1071_1.7-0.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/e1071_1.7-0.1.tar.gz
 Summary  : Functions for latent class analysis, short time Fourier transform, fuzzy clustering, support vector machines, shortest path computation, bagged clustering, naive Bayes classifier, ...
@@ -35,10 +35,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552806977
+export SOURCE_DATE_EPOCH=1552945765
 
 %install
-export SOURCE_DATE_EPOCH=1552806977
+export SOURCE_DATE_EPOCH=1552945765
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
