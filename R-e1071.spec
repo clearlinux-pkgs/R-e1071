@@ -4,7 +4,7 @@
 #
 Name     : R-e1071
 Version  : 1.7.2
-Release  : 67
+Release  : 68
 URL      : https://cran.r-project.org/src/contrib/e1071_1.7-2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/e1071_1.7-2.tar.gz
 Summary  : Functions for latent class analysis, short time Fourier transform, fuzzy clustering, support vector machines, shortest path computation, bagged clustering, naive Bayes classifier, ...
