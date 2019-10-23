@@ -4,16 +4,16 @@
 #
 Name     : R-e1071
 Version  : 1.7.2
-Release  : 68
+Release  : 69
 URL      : https://cran.r-project.org/src/contrib/e1071_1.7-2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/e1071_1.7-2.tar.gz
 Summary  : Functions for latent class analysis, short time Fourier transform, fuzzy clustering, support vector machines, shortest path computation, bagged clustering, naive Bayes classifier, ...
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
 Requires: R-e1071-lib = %{version}-%{release}
-Requires: R-SparseM
 BuildRequires : R-SparseM
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 transform, fuzzy clustering, support vector machines,
@@ -35,13 +35,13 @@ lib components for the R-e1071 package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1559899013
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1571821520
 
 %install
-export SOURCE_DATE_EPOCH=1559899013
+export SOURCE_DATE_EPOCH=1571821520
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -70,7 +70,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
