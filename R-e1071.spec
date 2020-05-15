@@ -4,15 +4,13 @@
 #
 Name     : R-e1071
 Version  : 1.7.3
-Release  : 73
+Release  : 74
 URL      : https://cran.r-project.org/src/contrib/e1071_1.7-3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/e1071_1.7-3.tar.gz
-Summary  : Functions for latent class analysis, short time Fourier transform, fuzzy clustering, support vector machines, shortest path computation, bagged clustering, naive Bayes classifier, ...
+Summary  : Misc Functions of the Department of Statistics, Probability
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
 Requires: R-e1071-lib = %{version}-%{release}
-Requires: R-SparseM
-BuildRequires : R-SparseM
 BuildRequires : buildreq-R
 
 %description
@@ -30,21 +28,22 @@ lib components for the R-e1071 package.
 
 %prep
 %setup -q -c -n e1071
+cd %{_builddir}/e1071
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1575283244
+export SOURCE_DATE_EPOCH=1589514065
 
 %install
-export SOURCE_DATE_EPOCH=1575283244
+export SOURCE_DATE_EPOCH=1589514065
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
