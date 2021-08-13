@@ -4,7 +4,7 @@
 #
 Name     : R-e1071
 Version  : 1.7.8
-Release  : 87
+Release  : 88
 URL      : https://cran.r-project.org/src/contrib/e1071_1.7-8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/e1071_1.7-8.tar.gz
 Summary  : Misc Functions of the Department of Statistics, Probability
