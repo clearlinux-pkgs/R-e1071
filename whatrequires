@@ -1,8 +1,10 @@
 # This file contains recursive sources that require this package
 R-RcmdrMisc
 R-VIM
+R-caret
 R-classInt
 R-coin
 R-gld
+R-pmml
 R-robCompositions
 R-spdep
