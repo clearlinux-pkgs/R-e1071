@@ -4,7 +4,7 @@
 #
 Name     : R-e1071
 Version  : 1.7.13
-Release  : 101
+Release  : 102
 URL      : https://cran.r-project.org/src/contrib/e1071_1.7-13.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/e1071_1.7-13.tar.gz
 Summary  : Misc Functions of the Department of Statistics, Probability
@@ -15,9 +15,6 @@ Requires: R-proxy
 BuildRequires : R-proxy
 BuildRequires : R-randomForest
 BuildRequires : buildreq-R
-# Suppress stripping binaries
-%define __strip /bin/true
-%define debug_package %{nil}
 
 %description
 transform, fuzzy clustering, support vector machines,
@@ -41,10 +38,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1675269341
+export SOURCE_DATE_EPOCH=1678816636
 
 %install
-export SOURCE_DATE_EPOCH=1675269341
+export SOURCE_DATE_EPOCH=1678816636
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
